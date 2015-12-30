@@ -25,7 +25,7 @@ SECRET_KEY = 'pdy3f#-a(5op9z)i!$xal=)bkbkf#4c#ueqw%10*)n278)z9in'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -118,5 +118,17 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
-
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.environ['GMAIL_EMAIL']
+EMAIL_HOST_PASSWORD = os.environ['GMAIL_PASSWORD']
+DEFAULT_FROM_EMAIL = 'Yasoob Khalid'
+DEFAULT_TO_EMAIL = 'yasoob.khld@gmail.com'

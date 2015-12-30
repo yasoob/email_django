@@ -1,0 +1,54 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+
+  <body>
+      <nav>
+        <div class="nav-wrapper container">
+          <a href="{% url 'index' %}" class="brand-logo">Django</a>
+        </div>
+      </nav>
+    <div class="container login-f">
+      <div class="row">
+      <div class="col s12 m6 offset-m3">
+        <div class="card-panel teal">
+          <span class="white-text">Thank you very much! We have sent you a welcome email. Kindly read it and let us know if there is anything else we can do for you.
+          <br>
+          <br>
+          ~Yasoob
+          </span>
+        </div>
+      </div>
+    </div>
+    </div>
+    <footer class="page-footer">
+      <div class="footer-copyright">
+        <div class="container">&copy; 2015 Copyright Muhammad Yasoob
+        </div>
+      </div>
+    </footer>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+    <script type="text/javascript">
+      function isEmail(email) {
+        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if regex.test(email){
+          document.getElementById('form').submit();
+        } else{
+          alert("Your email is incorrect!");
+        }
+      }
+    </script>
+  </body>
+</html>

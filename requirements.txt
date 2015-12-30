@@ -1,0 +1,7 @@
+Django==1.9.0
+dj-database-url==0.3.0
+dj_static
+gunicorn==19.1.1
+psycopg2==2.5.1
+static==0.4
+wsgiref==0.1.2

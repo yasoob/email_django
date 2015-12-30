@@ -1,0 +1,1 @@
+web: gunicorn gci_email.wsgi:application --log-file -
